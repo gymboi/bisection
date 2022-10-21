@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/icon/icon.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Numerical Methods</title>
+</head>
+<body>
+    <div id="menu-toggler" class="no-select">
+        <div class="bar no-select"></div>
+    </div>
+    <header>
+        <div class="logo">numerical methods</div>
+    </header>
+    <main>
+        <span id="method-name">bisection method</span>
+        <div class="input-wrapper">
+            <div class="input">
+                <div class="function-wrapper">
+                    <div class="function">
+                        <label for="function">f(x): </label>
+                        <math-field id="function"></math-field>
+                    </div>
+                </div>
+            </div>
+            <div class="input">
+                <div class="interval-wrapper">
+                    <div class="interval">
+                        <label for="xl">x<sub>l</sub>: </label>
+                        <input id="xl" type="text">
+                    </div>
+                    <div class="interval">
+                        <label for="xu">x<sub>u</sub>: </label>
+                        <input id="xu" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="input">
+                <div class="repetitions-wrapper">
+                    <label for="repetitions">Repetitions: </label>
+                    <input id="repetitions" type="number" >
+                </div>
+            </div>
+            <button id="calculate">Calculate</button>
+        </div>
+        <div class="results-wrapper">
+            <table id="results"></table>
+        </div>
+
+    </main>
+    <script src="js/jquery/jquery.min.js"></script>
+    <script src="js/compute-engine.js"></script>
+    <script src="js/mathlive/mathlive.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
