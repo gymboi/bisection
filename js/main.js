@@ -39,17 +39,50 @@ $(document).ready(function() {
         let iterations = [];
         let repetitions = $("#repetitions").val();
         iterations = bisectionMethod(ce, formula, $("#xl").val(), $("#xu").val(), repetitions);
-        
+        let iterationsWrapper = $(".iterations-wrapper");
         for (let i = 0; i < repetitions; i++) {
+            // iterations.push([i + 2, xl, xu, fxl, fxu, xr, fxr, ea]);
+            let xl = iterations[i][1];
+            let xu = iterations[i][2];
+            let fxl = iterations[i][3];
+            let fxu = iterations[i][4];
+            let xr = iterations[i][5];
+            let fxr = iterations[i][6];
+            let ea = iterations[i][7];
+
+            
+            let iterationDiv = $('<div class="iteration"></div>');
+            iterationDiv.append($(`<span class="iteration-header">Iteration ${i+1}:</span>`));
+            let iterationContent = $('<p class="iteration-content"></p>');
+            
+            iterationContent.append($(`<span>Step 1: x<sub>l</sub> = ${xl}, x<sub>u</sub> = ${xu}</span>`))
+            iterationContent.append($(`<span>Step 2: Determine the estimate of the root using the formula: x<sub>r</sub> = (x<sub>l</sub> + x<sub>u</sub>)/2<br>x<sub>r</sub> = (${xu} + ${xu})/2<br>x<sub>r</sub> = ${xr}</span>`))
+            
+            if (fxl * fxr < 0) {
+                iterationContent.append($(`<span>Step 3: The root lies in the lower subinterval. Therefore, x<sub>u</sub> = x<sub>r</sub>.<br>x<sub>u</sub> = ${xr}</span>`));
+            }
+            else if (fxl * fxr > 0) {
+                iterationContent.append($(`<span>Step 3: The root lies in the upper subinterval. Therefore, x<sub>l</sub> = x<sub>r</sub>.<br>x<sub>l</sub> = ${xr}</span>`));
+            }
+            else if (fxl * fxr == 0) {
+                iterationContent.append($(`<span>Step 3: The root is ${xr}.</span>`));
+            }
+            
             let tr = $('<tr class="table-data"></tr>');
-            console.log(iterations);
             iterations[i].forEach(e => {
+                // Table
                 let th = $(`<td>${e}</td>`);
                 tr.append(th);
-            })
-    
+
+                // Steps
+
+            });
+            iterationDiv.append(iterationContent);
+            iterationsWrapper.append(iterationDiv);
             results.append(tr);
         }
+
+        console.log(iterations);
     });
 });
 
