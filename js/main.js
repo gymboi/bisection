@@ -31,14 +31,24 @@ $(document).ready(function() {
     const ce = new ComputeEngine.ComputeEngine();
     ce.numericMode = 'machine';
 
-    MathLive.renderMathInDocument()
+    MathLive.renderMathInDocument();
 
     let calculate = $("#calculate");
 
+    let prevXl = "";
+    let prevXu = "";
+    let prevFormula = "";
+    let prevReps = "";
     calculate.on("click", () => {
         let iterations = [];
         let repetitions = $("#repetitions").val();
-        iterations = bisectionMethod(ce, formula, $("#xl").val(), $("#xu").val(), repetitions);
+        let currentXl = $("#xl").val();
+        let currentXu = $("#xu").val();
+        if(prevXl == currentXl && prevXu == currentXu && prevFormula == formula && prevReps == repetitions){
+            alert("adawd");
+            return;
+        }
+        iterations = bisectionMethod(ce, formula, currentXl, currentXu, repetitions);
         let iterationsWrapper = $(".iterations-wrapper");
         for (let i = 0; i < repetitions; i++) {
             // iterations.push([i + 2, xl, xu, fxl, fxu, xr, fxr, ea]);
@@ -50,7 +60,7 @@ $(document).ready(function() {
             let fxr = iterations[i][6];
             let ea = iterations[i][7];
 
-            
+
             let iterationDiv = $('<div class="iteration"></div>');
             iterationDiv.append($(`<h3 class="iteration-header">Iteration ${i+1}:</h3>`));
             let iterationContent = $('<p class="iteration-content"></p>');
@@ -86,7 +96,10 @@ $(document).ready(function() {
             iterationsWrapper.append(iterationDiv);
             results.append(tr);
         }
-
+        prevXl = currentXl;
+        prevXu = currentXu;
+        prevFormula = formula;
+        prevReps = repetitions;
         console.log(iterations);
     });
 });
