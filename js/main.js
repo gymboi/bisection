@@ -52,20 +52,24 @@ $(document).ready(function() {
 
             
             let iterationDiv = $('<div class="iteration"></div>');
-            iterationDiv.append($(`<span class="iteration-header">Iteration ${i+1}:</span>`));
+            iterationDiv.append($(`<h3 class="iteration-header">Iteration ${i+1}:</h3>`));
             let iterationContent = $('<p class="iteration-content"></p>');
             
-            iterationContent.append($(`<span>Step 1: x<sub>l</sub> = ${xl}, x<sub>u</sub> = ${xu}</span>`))
-            iterationContent.append($(`<span>Step 2: Determine the estimate of the root using the formula: x<sub>r</sub> = (x<sub>l</sub> + x<sub>u</sub>)/2<br>x<sub>r</sub> = (${xu} + ${xu})/2<br>x<sub>r</sub> = ${xr}</span>`))
+            iterationContent.append($(`<span><strong>Step 1:</strong> x<sub>l</sub> = ${xl}, x<sub>u</sub> = ${xu}</span>`))
+            iterationContent.append($(`<br><span><strong>Step 2:</strong> Determine the estimate of the root using the formula: x<sub>r</sub> = (x<sub>l</sub> + x<sub>u</sub>)/2
+                <br><strong>x<sub>r</sub> =</strong> (${xu} + ${xu})/2
+                <br><strong>x<sub>r</sub></strong> = ${xr}</span>`))
             
             if (fxl * fxr < 0) {
-                iterationContent.append($(`<span>Step 3: The root lies in the lower subinterval. Therefore, x<sub>u</sub> = x<sub>r</sub>.<br>x<sub>u</sub> = ${xr}</span>`));
+                iterationContent.append($(`<br><span><strong>Step 3:</strong> The root lies in the lower subinterval. Therefore, x<sub>u</sub> = x<sub>r</sub>.
+                    <br><strong>x<sub>u</sub></strong> = ${xr}</span>`));
             }
             else if (fxl * fxr > 0) {
-                iterationContent.append($(`<span>Step 3: The root lies in the upper subinterval. Therefore, x<sub>l</sub> = x<sub>r</sub>.<br>x<sub>l</sub> = ${xr}</span>`));
+                iterationContent.append($(`<br><span><strong>Step 3:</strong> The root lies in the upper subinterval. Therefore, x<sub>l</sub> = x<sub>r</sub>.
+                    <br><strong>x<sub>l</sub></strong> = ${xr}</span>`));
             }
             else if (fxl * fxr == 0) {
-                iterationContent.append($(`<span>Step 3: The root is ${xr}.</span>`));
+                iterationContent.append($(`<br><span><strong>Step 3:</strong> The root is ${xr}.</span>`));
             }
             
             let tr = $('<tr class="table-data"></tr>');
@@ -77,6 +81,7 @@ $(document).ready(function() {
                 // Steps
 
             });
+            iterationContent.append(`<br><br>`);
             iterationDiv.append(iterationContent);
             iterationsWrapper.append(iterationDiv);
             results.append(tr);
