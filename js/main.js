@@ -1,15 +1,4 @@
 $(document).ready(function() {
-    // Hamburger Menu
-    let menuToggler = $("#menu-toggler");
-    let bar = $(".bar");
-
-    menuToggler.on("click", function() {
-        menuToggler.toggleClass("open");
-        bar.toggleClass("open");
-        $("header").toggleClass("open");
-        $(".menu").toggleClass("open");
-    });
-
     let tableHeaders = ['i', 'x<sub>l</sub>', 'x<sub>u</sub>', 'f(x<sub>l</sub>)', 'f(x<sub>u</sub>)', 'x<sub>r</sub>', 'f(x<sub>r</sub>)', 'ε<sub>a</sub>'];
     let results = $("#results");
 
