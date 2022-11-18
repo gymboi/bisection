@@ -10,10 +10,16 @@
   </head>
   <body>
     <header>
-      <div class="logo">NumericalMethod</div>
+      <div class="logo">Numerical<span>Methods</span></div>
+      <br>
+      <!--TO BE FILLED UP WITH THE LIMITATIONS OF THE PROGRAM-->
+      <span>Limitations:</span>
+      <br>
+      <span>Cannot blablabla</span>
     </header>
+    <span id="method-name">Bisection Method</span>
     <main>
-      <span id="method-name">Bisection Method</span>
+      <div class="left-wrapper">
       <div class="input-wrapper">
         <div class="input">
           <div class="function-wrapper">
@@ -43,16 +49,23 @@
         </div>
         <button id="calculate">Calculate</button>
       </div>
+    </div>
+  </div>
+      <div class="right-wrapper">
       <div class="results-wrapper">
         <table id="results"></table>
       </div>
       <div class="iterations-wrapper">
-
+      </div>
       </div>
     </main>
     <script src="js/jquery/jquery.min.js"></script>
     <script src="js/compute-engine.js"></script>
     <script src="js/mathlive/mathlive.js"></script>
     <script src="js/main.js"></script>
+
+    <footer>
+      <span>@Gymbois</span>
+    </footer>
   </body>
 </html>
