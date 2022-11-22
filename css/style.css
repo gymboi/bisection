@@ -1,207 +1,213 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap");
-* {
-  box-sizing: border-box;
-  font-family: "Roboto Mono", monospace;
-  margin: 0;
-  padding: 0;
+ * {
+     box-sizing: border-box;
+     font-family: "Roboto Mono", monospace;
+     margin: 0;
+     padding: 0;
+}
+ html {
+     font-size: 10px;
+     width: 100%;
+     overflow-x: hidden;
+}
+ body {
+     width: 100%;
+}
+ header {
+     text-align: center;
+     font-size: 1.5rem;
+     margin:0;
+     padding:0;
+     width: 13%;
+     height: 100%;
+     position: fixed;
+     overflow: hidden;
+     background-color: black;
+     color: white;
+}
+ main{
+     display: flex;
+     flex-direction: row;
+     margin-left:13.2%;
+     font-size: 2rem;
+}
+ .row {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     width: 49%;
+}
+ .column {
+     display: flex;
+     flex-direction: column;
+     flex-basis: 100%;
+     flex: 1;
+}
+ #calculate {
+     padding: 1rem;
+     width: 100%;
+     background-color: #FDE795;
+     border-radius: .5rem;
+     outline: 0;
+     border: 0;
+     cursor: pointer;
+}
+ #calculate:hover{
+     background-color: #C9A12B;
+     transition: .2s;
+}
+ .left-wrapper{
+     margin-bottom: 1rem;
+     border: 2px solid black;
+     padding: 1.5rem;
+     border-radius: 2rem;
+}
+ .right-wrapper{
+     margin-left: 1rem;
+     background-color: black;
+     border-radius: 2rem;
+     border: 2px solid black;
+}
+ .bottom-left-wrapper{
+     max-width: 67%;
+     padding: .5rem;
+     border: 2px solid black;
+     border-radius: 2rem;
+     overflow: auto;
 }
 
-html {
-  font-size: 10px;
-  width: 100%;
-  overflow-x: hidden;
+ .method-name{
+     font-size: 2rem;
+     text-align: center;
+     padding: 1rem;
+}
+ #function, #xl, #xu, #repetitions{
+     border: 0;
+     outline: 0;
+     background-color: #F8CADA;
+     color:#32064A;
+}
+ .function, .derivative {
+     display: flex;
+     align-items: center;
+     flex-direction: row;
+     margin-bottom: 2rem;
+     width: 100%;
+}
+ math-field {
+     display: inline-block;
+     background-color: rgb(255, 254, 251);
+     border: 0.1rem solid;
+     border-radius: 0.5rem;
+     flex-grow: 1;
+     padding: 0.2rem 1rem;
+     max-height: 100%;
+}
+ input {
+     background-color: rgb(255, 254, 251);
+     border: 0.1rem solid;
+     border-radius: 0.5rem;
+     font-size: 2rem;
+     height: 3.5rem;
+     padding: 0rem 1rem;
+     width: 100%;
+}
+ .input {
+     margin-bottom: 2rem;
+}
+ .input-wrapper {
+     margin: auto ;
+     width: 90%;
+}
+ .interval-wrapper, .highest-degree-wrapper, .rs-wrapper {
+     display: flex;
+     justify-content: space-between;
+     width: 100%;
+}
+ .interval, .highest-degree, .rs {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     width: 100%;
+}
+ .interval input, .highest-degree input, .rs input {
+     flex-grow: 100;
+}
+ .repetitions-wrapper, .highest-degree-count-wrapper {
+     display: flex;
+     justify-content: space-between;
+}
+ .repetitions-wrapper input, .highest-degree-count-wrapper input {
+     width: 60%;
+}
+ .results-wrapper {
+     width: 100%;
+     border-radius: 2rem;
+     max-height: 80vh;
+     overflow: auto;
+}
+ #results {
+     border-collapse: collapse;
+     width: 100%;
+     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.15);
+     border-bottom: 1px solid #dddddd;
+     text-align: left;
+     overflow-x: auto;
+}
+ #results th, #results td {
+     padding: 0.8rem 1rem;
+}
+ #results tr th {
+     overflow: hidden;
+     background-color: black;
+     color: white;
+}
+ th {
+     position: -webkit-sticky;
+    /* for Safari */
+     position: sticky;
+     top: 0;
+}
+ th:first-child {
+     left: 0;
+     position: sticky;
+     z-index: 2;
+}
+ td:first-child {
+     background-color: inherit;
+     position: sticky;
+     left: 0;
+     z-index: 2000;
+}
+ #table-header {
+     position: sticky;
+     top: 0;
+}
+ .table-data {
+     background: white;
+}
+ .table-data:nth-of-type(even) {
+     background: #eeeeee;
+}
+ .iterations-wrapper {
+     width: 62vw;
+}
+ .iterations-wrapper span {
+     display: inline-block;
 }
 
-body {
-  width: 100%;
+::-webkit-scrollbar {
+  width: 20px;
 }
-
-header {
-  text-align: center;
-  font-size: 1.5rem;
-  margin:0;
-  padding:0;
-  width: 13%;
-  height: 100%;
-  position: fixed;
-  overflow: hidden;
-  background-color: black;
-  color: white;
-}
-
-main{
-  display: flex;
-  flex-direction: row;
-  margin-left:13.2%;
-  font-size: 2rem;
-}
-
-footer{
-  padding: 1rem;
-  font-size: 1.4rem;
-  text-align: center;
-}
-
-#calculate {
-  padding: 1rem;
-  width: 100%;
-  background-color: #FDE795;
-  border-radius: .5rem;
-  outline: 0;
-  border: 0;
-  cursor: pointer;
-}
-
-#calculate:hover{
-  background-color: #C9A12B;
-  transition: .2s;
-}
-
-.left-wrapper{
-  border: 2px solid black;
-  padding: 1.5rem;
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 3px grey;
   border-radius: 2rem;
 }
-
-.right-wrapper{
-  border: 2px solid black;
-  padding: 1.5rem;
+::-webkit-scrollbar-thumb {
+  background: #F8CADA;
   border-radius: 2rem;
-  margin-right: 1rem;
 }
-
-.left-wrapper + .right-wrapper{
-  margin-left: 1rem;
+::-webkit-scrollbar-thumb:hover {
+  background: #32064A;
 }
-
-#function, #xl, #xu, #repetitions{
-  border: 0;
-  outline: 0;
-  background-color: #F8CADA;
-  color:#32064A;
-}
-
-.function, .derivative {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  margin-bottom: 2rem;
-  width: 100%;
-}
-
-math-field {
-  display: inline-block;
-  background-color: rgb(255, 254, 251);
-  border: 0.1rem solid;
-  border-radius: 0.5rem;
-  flex-grow: 1;
-  padding: 0.2rem 1rem;
-  max-height: 100%;
-}
-
-input {
-  background-color: rgb(255, 254, 251);
-  border: 0.1rem solid;
-  border-radius: 0.5rem;
-  font-size: 2rem;
-  height: 3.5rem;
-  padding: 0rem 1rem;
-  width: 100%;
-}
-
-.input {
-  margin-bottom: 2rem;
-}
-
-.input-wrapper {
-  margin: auto ;
-  width: 90%;
-}
-
-.interval-wrapper, .highest-degree-wrapper, .rs-wrapper {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.interval, .highest-degree, .rs {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-.interval input, .highest-degree input, .rs input {
-  flex-grow: 100;
-}
-
-.repetitions-wrapper, .highest-degree-count-wrapper {
-  display: flex;
-  justify-content: space-between;
-}
-.repetitions-wrapper input, .highest-degree-count-wrapper input {
-  width: 60%;
-}
-
-.results-wrapper {
-  width: 100%;
-  max-height: 80vh;
-  overflow: auto;
-}
-
-#results {
-  border-collapse: collapse;
-  width: 100%;
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.15);
-  border-bottom: 1px solid #dddddd;
-  text-align: left;
-  overflow-x: auto;
-}
-
-#results th, #results td {
-  padding: 0.8rem 1rem;
-}
-
-#results tr th {
-  overflow: hidden;
-  background-color: black;
-  color: white;
-}
-
-th {
-  position: -webkit-sticky; /* for Safari */
-  position: sticky;
-  top: 0;
-}
-
-th:first-child {
-  left: 0;
-  position: sticky;
-  z-index: 2;
-}
-
-td:first-child {
-  background-color: inherit;
-  position: sticky;
-  left: 0;
-  z-index: 2000;
-}
-
-#table-header {
-  position: sticky;
-  top: 0;
-}
-
-.table-data {
-  background: white;
-}
-
-.table-data:nth-of-type(even) {
-  background: #eeeeee;
-}
-
-.iterations-wrapper {
-  width: 60vw;
-}
-.iterations-wrapper span {
-  display: inline-block;
-}
+ 

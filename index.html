@@ -1,69 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="images/icon/icon.jpg" />
-    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/icon/icon.jpg">
+    <link rel="stylesheet" href="css/style.css">
     <title>Numerical Methods</title>
   </head>
   <body>
     <header>
-      <div class="logo">Numerical<span>Methods</span></div>
+      <div class="logo">Numerical <span>Methods</span>
+      </div>
       <br>
       <!--TO BE FILLED UP WITH THE LIMITATIONS OF THE PROGRAM-->
       <span>Limitations:</span>
       <br>
       <span>Cannot blablabla</span>
     </header>
-    <span id="method-name">Bisection Method</span>
-    <main>
-      <div class="left-wrapper">
-      <div class="input-wrapper">
-        <div class="input">
-          <div class="function-wrapper">
-            <div class="function">
-              <label for="function">f(x): </label>
-              <math-field id="function"></math-field>
-            </div>
-          </div>
-        </div>
-        <div class="input">
-          <div class="interval-wrapper">
-            <div class="interval">
-              <label for="xl">x<sub>l</sub>: </label>
-              <input id="xl" type="text" />
-            </div>
-            <div class="interval">
-              <label for="xu">x<sub>u</sub>: </label>
-              <input id="xu" type="text" />
-            </div>
-          </div>
-        </div>
-        <div class="input">
-          <div class="repetitions-wrapper">
-            <label for="repetitions">Repetitions: </label>
-            <input id="repetitions" type="number" />
-          </div>
-        </div>
-        <button id="calculate">Calculate</button>
-      </div>
+    <div class="method-name">
+      <span>Bisection Method</span>
     </div>
-  </div>
-      <div class="right-wrapper">
-      <div class="results-wrapper">
-        <table id="results"></table>
+    <main>
+      <div class="row">
+        <div class="column">
+          <!--Left Div Box-->
+          <div class="left-wrapper">
+            <div class="input-wrapper">
+              <div class="input">
+                <div class="function-wrapper">
+                  <div class="function">
+                    <label for="function">f(x): </label>
+                    <math-field id="function"></math-field>
+                  </div>
+                </div>
+              </div>
+              <div class="input">
+                <div class="interval-wrapper">
+                  <div class="interval">
+                    <label for="xl">x <sub>l</sub>: </label>
+                    <input id="xl" type="text">
+                  </div>
+                  <div class="interval">
+                    <label for="xu">x <sub>u</sub>: </label>
+                    <input id="xu" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="input">
+                <div class="repetitions-wrapper">
+                  <label for="repetitions">Repetitions: </label>
+                  <input id="repetitions" type="number">
+                </div>
+              </div>
+              <button id="calculate">Calculate</button>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <!--Bottom Left Div Box-->
+          <div class="bottom-left-wrapper">
+            <div class="iterations-wrapper"></div>
+          </div>
+        </div>
       </div>
-      <div class="iterations-wrapper">
-      </div>
+      <div class="row 2">
+        <div class="column">
+          <!--Right Div Box-->
+          <div class="right-wrapper">
+            <div class="results-wrapper">
+              <table id="results"></table>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <script src="js/jquery/jquery.min.js"></script>
     <script src="js/compute-engine.js"></script>
     <script src="js/mathlive/mathlive.js"></script>
     <script src="js/main.js"></script>
-
     <footer>
       <span>@Gymbois</span>
     </footer>
