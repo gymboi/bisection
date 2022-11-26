@@ -75,7 +75,11 @@ main {
 .row {
   display: flex;
   flex-direction: column;
-  width: 48%;
+  width: 50vw;
+}
+
+.row:first-child {
+  width: 35vw;
 }
 
 .column {
@@ -330,7 +334,7 @@ tr:first-child {
   padding: 0.5rem;
   border: 2px solid black;
   border-radius: 2rem;
-  height: 50vh;
+  height: 45vh;
   overflow: auto;
 }
 
@@ -375,5 +379,18 @@ tr:first-child {
     flex-direction: column;
     margin-left: unset;
     align-items: center;
+    gap: 2rem;
+  }
+
+  .row {
+    width: 75vw;
+  }
+
+  .row:first-child {
+    width: 75vw;
+  }
+
+  .results-wrapper {
+    margin-left: unset;
   }
 }

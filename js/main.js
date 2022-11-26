@@ -76,15 +76,15 @@ $(document).ready(function () {
                 <br><strong>x<sub>r</sub></strong> = ${xr}</span>`))
 
             if (fxl * fxr < 0) {
-                iterationContent.append($(`<br><span><strong>Step 3:</strong> The root lies in the lower subinterval. Therefore, x<sub>u</sub> = x<sub>r</sub>.
+                iterationContent.append($(`<br><span><strong>Step 3:</strong> The root lies in the lower subinterval because f(x<sub>l</sub>) * f(x<sub>r</sub>) < 0. Therefore, x<sub>u</sub> = x<sub>r</sub>.
                     <br><strong>x<sub>u</sub></strong> = ${xr}</span>`));
             }
             else if (fxl * fxr > 0) {
-                iterationContent.append($(`<br><span><strong>Step 3:</strong> The root lies in the upper subinterval. Therefore, x<sub>l</sub> = x<sub>r</sub>.
+                iterationContent.append($(`<br><span><strong>Step 3:</strong> The root lies in the upper subinterval because f(x<sub>l</sub>) * f(x<sub>r</sub>) > 0. Therefore, x<sub>l</sub> = x<sub>r</sub>.
                     <br><strong>x<sub>l</sub></strong> = ${xr}</span>`));
             }
             else if (fxl * fxr == 0) {
-                iterationContent.append($(`<br><span><strong>Step 3:</strong> The root is ${xr}.</span>`));
+                iterationContent.append($(`<br><span><strong>Step 3:</strong> The root is ${xr} because f(x<sub>l</sub>) * f(x<sub>r</sub>) = 0.</span>`));
             }
 
             let tr = $('<tr class="table-data"></tr>');
