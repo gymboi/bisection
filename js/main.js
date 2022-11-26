@@ -1,4 +1,13 @@
 $(document).ready(function() {
+    let header = $('#header');
+    let buttonWrapper = $('#button-wrapper');
+    let menuButton = $('#hamburger');
+    menuButton.on('click', () => {
+        header.toggleClass('open');
+        buttonWrapper.toggleClass('open');
+    });
+    
+    
     let tableHeaders = ['i', 'x<sub>l</sub>', 'x<sub>u</sub>', 'f(x<sub>l</sub>)', 'f(x<sub>u</sub>)', 'x<sub>r</sub>', 'f(x<sub>r</sub>)', 'ε<sub>a</sub>'];
     let results = $("#results");
 
@@ -10,9 +19,7 @@ $(document).ready(function() {
 
     // Function code
     let functionText = $("#function");
-    let derivativeText;
     let formula = "";
-    let derivative = "";
     functionText.on('input', (ev) => {
         formula = (ev.target.getValue());
     });
@@ -37,7 +44,7 @@ $(document).ready(function() {
         let iterationsWrapper = $(".iterations-wrapper");
 
         let iterationDiv = $('<div class="iteration"></div>');
-        iterationDiv.append($('<span class="solution-title">Solution</span>'));
+        iterationsWrapper.append($('<span class="solution-title">Solution</span>'));
         for (let i = 0; i < repetitions; i++) {
             // iterations.push([i + 2, xl, xu, fxl, fxu, xr, fxr, ea]);
             let xl = iterations[i][1];
