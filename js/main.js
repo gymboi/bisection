@@ -35,6 +35,9 @@ $(document).ready(function() {
 
         //add iterations-wrapper content
         let iterationsWrapper = $(".iterations-wrapper");
+
+        let iterationDiv = $('<div class="iteration"></div>');
+        iterationDiv.append($('<span class="solution-title">Solution</span>'));
         for (let i = 0; i < repetitions; i++) {
             // iterations.push([i + 2, xl, xu, fxl, fxu, xr, fxr, ea]);
             let xl = iterations[i][1];
@@ -46,13 +49,12 @@ $(document).ready(function() {
             let ea = iterations[i][7];
 
 
-            let iterationDiv = $('<div class="iteration"></div>');
             iterationDiv.append($(`<h3 class="iteration-header">Iteration ${i+1}:</h3>`));
             let iterationContent = $('<p class="iteration-content"></p>');
             
             iterationContent.append($(`<span><strong>Step 1:</strong> x<sub>l</sub> = ${xl}, x<sub>u</sub> = ${xu}</span>`))
             iterationContent.append($(`<br><span><strong>Step 2:</strong> Determine the estimate of the root using the formula: x<sub>r</sub> = (x<sub>l</sub> + x<sub>u</sub>)/2
-                <br><strong>x<sub>r</sub> =</strong> (${xu} + ${xu})/2
+                <br><strong>x<sub>r</sub> =</strong> (${xl} + ${xu})/2
                 <br><strong>x<sub>r</sub></strong> = ${xr}</span>`))
             
             if (fxl * fxr < 0) {

@@ -26,17 +26,16 @@ header {
 }
 
 header button {
-    background: transparent;
-    cursor: pointer;
+  background: transparent;
+  cursor: pointer;
 }
 
 header button img {
-    width: 2rem;
+  width: 2rem;
 }
-
 .button-wrapper {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
@@ -89,8 +88,8 @@ main {
   border: 2px solid black;
   border-radius: 2rem;
 }
-
 .iteration {
+  margin: auto;
   width: 66%;
 }
 
@@ -190,7 +189,7 @@ input {
 }
 #results tr th {
   overflow: hidden;
-  background-color: black;
+  background-color: rgba(235, 97, 143, 255);
   color: white;
 }
 th {
@@ -218,19 +217,25 @@ td:first-child {
   background: white;
 }
 .table-data:nth-of-type(even) {
-  background: #eeeeee;
+  background: rgba(248, 218, 199, 255);
 }
 .iterations-wrapper {
+  margin: auto;
   width: 62vw;
 }
 .iterations-wrapper span {
+  margin: auto;
   display: inline-block;
 }
 
 .white {
-    filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
 }
-
+.solution-title {
+  text-align: center;
+  color: rgba(50, 6, 74, 255);
+  font-size: 30px;
+}
 ::-webkit-scrollbar {
   width: 20px;
 }
