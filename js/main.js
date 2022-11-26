@@ -52,7 +52,7 @@ $(document).ready(function() {
             
             iterationContent.append($(`<span><strong>Step 1:</strong> x<sub>l</sub> = ${xl}, x<sub>u</sub> = ${xu}</span>`))
             iterationContent.append($(`<br><span><strong>Step 2:</strong> Determine the estimate of the root using the formula: x<sub>r</sub> = (x<sub>l</sub> + x<sub>u</sub>)/2
-                <br><strong>x<sub>r</sub> =</strong> (${xu} + ${xu})/2
+                <br><strong>x<sub>r</sub> =</strong> (${xl} + ${xu})/2
                 <br><strong>x<sub>r</sub></strong> = ${xr}</span>`))
             
             if (fxl * fxr < 0) {
