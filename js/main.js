@@ -103,6 +103,30 @@ $(document).ready(function () {
         }
         console.log(iterations);
     });
+
+    var modal = document.getElementById("modal-wrapper");
+    var discussionBtn = document.getElementById("discussion");
+    var closeBtn = document.getElementsByClassName("close")[0];
+
+
+    discussionBtn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    closeBtn.onclick = function () {
+        modal.style.display = "none";
+    }
+    // prevents modal bar from closing when clicking outside the div box
+    $('#modal-wrapper').modal({
+        backdrop: 'static',
+        keyboard: false
+    });
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 });
 
 // xli = initial lower bound, xui = initial upper bound
@@ -178,28 +202,4 @@ function calculateApproximateError(xr, xro) {
     let e = Math.abs((xr - xro) / xr) * 100;
     e = parseFloat(e.toFixed(4)) + "%";
     return e;
-}
-
-var modal = document.getElementById("modal-wrapper");
-var discussionBtn = document.getElementById("discussion");
-var closeBtn = document.getElementsByClassName("close")[0];
-
-
-discussionBtn.onclick = function() {
-  modal.style.display = "block";
-}
-
-closeBtn.onclick = function() {
-  modal.style.display = "none";
-}
-// prevents modal bar from closing when clicking outside the div box
-$('#modal-wrapper').modal({
-    backdrop: 'static',
-    keyboard: false
-});
-
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
 }
