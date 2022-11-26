@@ -1,202 +1,234 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap");
- * {
-     box-sizing: border-box;
-     font-family: "Roboto Mono", monospace;
-     margin: 0;
-     padding: 0;
+* {
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+  margin: 0;
+  padding: 0;
 }
- html {
-     font-size: 10px;
-     width: 100%;
-     overflow-x: hidden;
+html {
+  font-size: 10px;
+  width: 100%;
+  overflow-x: hidden;
 }
- body {
-     width: 100%;
+body {
+  width: 100%;
 }
- header {
-     text-align: center;
-     font-size: 1.5rem;
-     margin:0;
-     padding:0;
-     width: 13%;
-     height: 100%;
-     position: fixed;
-     background-color: black;
-     color: white;
+header {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: 13%;
+  height: 100%;
+  position: fixed;
+  background-color: black;
+  color: white;
 }
- main{
-     display: flex;
-     flex-direction: row;
-     margin-left:13.2%;
-     font-size: 2rem;
-}
- .row {
-     display: flex;
-     flex-direction: row;
-     flex-wrap: wrap;
-     width: 49%;
-}
- .column {
-     display: flex;
-     flex-direction: column;
-     flex-basis: 100%;
-     flex: 1;
-}
- #calculate {
-     padding: 1rem;
-     width: 100%;
-     background-color: #FDE795;
-     border-radius: .5rem;
-     outline: 0;
-     border: 0;
-     cursor: pointer;
-}
- #calculate:hover{
-     background-color: #C9A12B;
-     transition: .2s;
-}
- .left-wrapper{
-     margin-bottom: 1rem;
-     border: 2px solid black;
-     padding: 1.5rem;
-     border-radius: 2rem;
-}
- .right-wrapper{
-     margin-left: 1rem;
-     background-color: black;
-     border-radius: 2rem;
-     border: 2px solid black;
-}
- 
- .bottom-left-wrapper{
-     max-width: 67%;
-     padding: .5rem;
-     border: 2px solid black;
-     border-radius: 2rem;
-    }
 
-   .iteration{
-        width: 66%;
-    }
+header button {
+    background: transparent;
+    cursor: pointer;
+}
 
- .method-name{
-     font-size: 2rem;
-     text-align: center;
-     padding: 1rem;
+header button img {
+    width: 2rem;
 }
- #function, #xl, #xu, #repetitions{
-     border: 0;
-     outline: 0;
-     background-color: #F8CADA;
-     color:#32064A;
+
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
 }
- .function, .derivative {
-     display: flex;
-     align-items: center;
-     flex-direction: row;
-     margin-bottom: 2rem;
-     width: 100%;
+
+main {
+  display: flex;
+  flex-direction: row;
+  margin-left: 13.2%;
+  font-size: 2rem;
 }
- math-field {
-     display: inline-block;
-     background-color: rgb(255, 254, 251);
-     border: 0.1rem solid;
-     border-radius: 0.5rem;
-     flex-grow: 1;
-     padding: 0.2rem 1rem;
-     max-height: 100%;
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 49%;
 }
- input {
-     background-color: rgb(255, 254, 251);
-     border: 0.1rem solid;
-     border-radius: 0.5rem;
-     font-size: 2rem;
-     height: 3.5rem;
-     padding: 0rem 1rem;
-     width: 100%;
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
 }
- .input {
-     margin-bottom: 2rem;
+#calculate {
+  padding: 1rem;
+  width: 100%;
+  background-color: #fde795;
+  border-radius: 0.5rem;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
 }
- .input-wrapper {
-     margin: auto ;
-     width: 90%;
+#calculate:hover {
+  background-color: #c9a12b;
+  transition: 0.2s;
 }
- .interval-wrapper, .highest-degree-wrapper, .rs-wrapper {
-     display: flex;
-     justify-content: space-between;
-     width: 100%;
+.left-wrapper {
+  margin-bottom: 1rem;
+  border: 2px solid black;
+  padding: 1.5rem;
+  border-radius: 2rem;
 }
- .interval, .highest-degree, .rs {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     width: 100%;
+.right-wrapper {
+  margin-left: 1rem;
+  background-color: black;
+  border-radius: 2rem;
+  border: 2px solid black;
 }
- .interval input, .highest-degree input, .rs input {
-     flex-grow: 100;
+
+.bottom-left-wrapper {
+  max-width: 67%;
+  padding: 0.5rem;
+  border: 2px solid black;
+  border-radius: 2rem;
 }
- .repetitions-wrapper, .highest-degree-count-wrapper {
-     display: flex;
-     justify-content: space-between;
+
+.iteration {
+  width: 66%;
 }
- .repetitions-wrapper input, .highest-degree-count-wrapper input {
-     width: 60%;
+
+.method-name {
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem;
 }
- .results-wrapper {
-     width: 100%;
-     border-radius: 2rem;
-     max-height: 80vh;
-     overflow: auto;
+#function,
+#xl,
+#xu,
+#repetitions {
+  border: 0;
+  outline: 0;
+  background-color: #f8cada;
+  color: #32064a;
 }
- #results {
-     border-collapse: collapse;
-     width: 100%;
-     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.15);
-     border-bottom: 1px solid #dddddd;
-     text-align: left;
-     overflow-x: auto;
+.function,
+.derivative {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 2rem;
+  width: 100%;
 }
- #results th, #results td {
-     padding: 0.8rem 1rem;
+math-field {
+  display: inline-block;
+  background-color: rgb(255, 254, 251);
+  border: 0.1rem solid;
+  border-radius: 0.5rem;
+  flex-grow: 1;
+  padding: 0.2rem 1rem;
+  max-height: 100%;
 }
- #results tr th {
-     overflow: hidden;
-     background-color: black;
-     color: white;
+input {
+  background-color: rgb(255, 254, 251);
+  border: 0.1rem solid;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  height: 3.5rem;
+  padding: 0rem 1rem;
+  width: 100%;
 }
- th {
-     position: -webkit-sticky;
-    /* for Safari */
-     position: sticky;
-     top: 0;
+.input {
+  margin-bottom: 2rem;
 }
- th:first-child {
-     left: 0;
-     position: sticky;
-     z-index: 2;
+.input-wrapper {
+  margin: auto;
+  width: 90%;
 }
- td:first-child {
-     background-color: inherit;
-     position: sticky;
-     left: 0;
-     z-index: 2000;
+.interval-wrapper,
+.highest-degree-wrapper,
+.rs-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
- #table-header {
-     position: sticky;
-     top: 0;
+.interval,
+.highest-degree,
+.rs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
- .table-data {
-     background: white;
+.interval input,
+.highest-degree input,
+.rs input {
+  flex-grow: 100;
 }
- .table-data:nth-of-type(even) {
-     background: #eeeeee;
+.repetitions-wrapper,
+.highest-degree-count-wrapper {
+  display: flex;
+  justify-content: space-between;
 }
- .iterations-wrapper {
-     width: 62vw;
+.repetitions-wrapper input,
+.highest-degree-count-wrapper input {
+  width: 60%;
 }
- .iterations-wrapper span {
-     display: inline-block;
+.results-wrapper {
+  width: 100%;
+  border-radius: 2rem;
+  max-height: 80vh;
+  overflow: auto;
+}
+#results {
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid #dddddd;
+  text-align: left;
+  overflow-x: auto;
+}
+#results th,
+#results td {
+  padding: 0.8rem 1rem;
+}
+#results tr th {
+  overflow: hidden;
+  background-color: black;
+  color: white;
+}
+th {
+  position: -webkit-sticky;
+  /* for Safari */
+  position: sticky;
+  top: 0;
+}
+th:first-child {
+  left: 0;
+  position: sticky;
+  z-index: 2;
+}
+td:first-child {
+  background-color: inherit;
+  position: sticky;
+  left: 0;
+  z-index: 2000;
+}
+#table-header {
+  position: sticky;
+  top: 0;
+}
+.table-data {
+  background: white;
+}
+.table-data:nth-of-type(even) {
+  background: #eeeeee;
+}
+.iterations-wrapper {
+  width: 62vw;
+}
+.iterations-wrapper span {
+  display: inline-block;
+}
+
+.white {
+    filter: brightness(0) invert(1);
 }
 
 ::-webkit-scrollbar {
@@ -207,10 +239,9 @@
   border-radius: 2rem;
 }
 ::-webkit-scrollbar-thumb {
-  background: #F8CADA;
+  background: #f8cada;
   border-radius: 1rem;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #32064A;
+  background: #32064a;
 }
- 
