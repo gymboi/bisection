@@ -2,11 +2,14 @@ $(document).ready(function() {
     let header = $('#header');
     let buttonWrapper = $('#button-wrapper');
     let menuButton = $('#hamburger');
+    let discussionButton = $('#discussion');
+    let exampleButton = $('#example');
+    let aboutButton = $('#about');
+
     menuButton.on('click', () => {
         header.toggleClass('open');
         buttonWrapper.toggleClass('open');
     });
-    
     
     let tableHeaders = ['i', 'x<sub>l</sub>', 'x<sub>u</sub>', 'f(x<sub>l</sub>)', 'f(x<sub>u</sub>)', 'x<sub>r</sub>', 'f(x<sub>r</sub>)', 'ε<sub>a</sub>'];
     let results = $("#results");
