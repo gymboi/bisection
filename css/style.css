@@ -145,6 +145,50 @@ main {
   width: 100%;
 }
 
+.modal {
+  display: none;
+  
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.modal-header{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  color:black;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 2rem;
+  width: 80%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 math-field {
   display: inline-block;
   background-color: rgb(255, 254, 251);
