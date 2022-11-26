@@ -35,6 +35,9 @@ $(document).ready(function() {
 
         //add iterations-wrapper content
         let iterationsWrapper = $(".iterations-wrapper");
+
+        let iterationDiv = $('<div class="iteration"></div>');
+        iterationDiv.append($('<span class="solution-title">Solution</span>'));
         for (let i = 0; i < repetitions; i++) {
             // iterations.push([i + 2, xl, xu, fxl, fxu, xr, fxr, ea]);
             let xl = iterations[i][1];
@@ -46,7 +49,6 @@ $(document).ready(function() {
             let ea = iterations[i][7];
 
 
-            let iterationDiv = $('<div class="iteration"></div>');
             iterationDiv.append($(`<h3 class="iteration-header">Iteration ${i+1}:</h3>`));
             let iterationContent = $('<p class="iteration-content"></p>');
             
