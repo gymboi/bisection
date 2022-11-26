@@ -30,6 +30,7 @@ header {
   background-color: rgb(50, 6, 74);
   color: white;
   transition: 1s ease;
+  z-index: 5;
 }
 
 header.open {
