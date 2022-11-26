@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     let header = $('#header');
     let buttonWrapper = $('#button-wrapper');
     let menuButton = $('#hamburger');
@@ -10,7 +10,7 @@ $(document).ready(function() {
         header.toggleClass('open');
         buttonWrapper.toggleClass('open');
     });
-    
+
     let tableHeaders = ['i', 'x<sub>l</sub>', 'x<sub>u</sub>', 'f(x<sub>l</sub>)', 'f(x<sub>u</sub>)', 'x<sub>r</sub>', 'f(x<sub>r</sub>)', 'ε<sub>a</sub>'];
     let results = $("#results");
 
@@ -35,8 +35,17 @@ $(document).ready(function() {
     let calculate = $("#calculate");
 
     calculate.on("click", () => {
+        results.empty();
+        hr = $('<tr></tr>');
+        tableHeaders.forEach(e => {
+            hr.append($(`<th>${e}</th>`));
+        });
+        results.append(hr);
+
         let iterations = [];
+        console.log(iterations);
         let repetitions = $("#repetitions").val();
+        console.log(repetitions);
         iterations = bisectionMethod(ce, formula, $("#xl").val(), $("#xu").val(), repetitions);
 
         //clears iterations-wrapper content
@@ -58,15 +67,14 @@ $(document).ready(function() {
             let fxr = iterations[i][6];
             let ea = iterations[i][7];
 
-
-            iterationDiv.append($(`<h3 class="iteration-header">Iteration ${i+1}:</h3>`));
+            iterationDiv.append($(`<h3 class="iteration-header">Iteration ${i + 1}:</h3>`));
             let iterationContent = $('<p class="iteration-content"></p>');
-            
+
             iterationContent.append($(`<span><strong>Step 1:</strong> x<sub>l</sub> = ${xl}, x<sub>u</sub> = ${xu}</span>`))
             iterationContent.append($(`<br><span><strong>Step 2:</strong> Determine the estimate of the root using the formula: x<sub>r</sub> = (x<sub>l</sub> + x<sub>u</sub>)/2
                 <br><strong>x<sub>r</sub> =</strong> (${xl} + ${xu})/2
                 <br><strong>x<sub>r</sub></strong> = ${xr}</span>`))
-            
+
             if (fxl * fxr < 0) {
                 iterationContent.append($(`<br><span><strong>Step 3:</strong> The root lies in the lower subinterval. Therefore, x<sub>u</sub> = x<sub>r</sub>.
                     <br><strong>x<sub>u</sub></strong> = ${xr}</span>`));
@@ -78,7 +86,7 @@ $(document).ready(function() {
             else if (fxl * fxr == 0) {
                 iterationContent.append($(`<br><span><strong>Step 3:</strong> The root is ${xr}.</span>`));
             }
-            
+
             let tr = $('<tr class="table-data"></tr>');
             iterations[i].forEach(e => {
                 // Table
@@ -109,20 +117,20 @@ function bisectionMethod(ce, formula, xli, xui, repetitions) {
 
     console.log(formula);
     let fn = ce.parse(formula);
-    fn = fn.subs({x: ce.box(xl)});
+    fn = fn.subs({ x: ce.box(xl) });
     let fxl = fn.N().machineValue;
     fxl = parseFloat(fxl.toFixed(6));
 
     fn = ce.parse(formula);
-    fn = fn.subs({x: ce.box(xu)});
-    let fxu  = fn.N().machineValue;
+    fn = fn.subs({ x: ce.box(xu) });
+    let fxu = fn.N().machineValue;
     fxu = parseFloat(fxu.toFixed(6));
 
     let xr = (xl + xu) / 2;
     xr = parseFloat(xr.toFixed(6));
 
     fn = ce.parse(formula);
-    fn = fn.subs({x: ce.box(xr)});
+    fn = fn.subs({ x: ce.box(xr) });
     let fxr = fn.N().machineValue;
     fxr = parseFloat(fxr.toFixed(6));
 
@@ -137,13 +145,13 @@ function bisectionMethod(ce, formula, xli, xui, repetitions) {
         };
 
         fn = ce.parse(formula);
-        fn = fn.subs({x: ce.box(xl)});
+        fn = fn.subs({ x: ce.box(xl) });
         fxl = fn.N().machineValue;
         fxl = parseFloat(fxl.toFixed(6));
 
         fn = ce.parse(formula);
-        fn = fn.subs({x: ce.box(xu)});
-        fxu  = fn.N().machineValue;
+        fn = fn.subs({ x: ce.box(xu) });
+        fxu = fn.N().machineValue;
         fxu = parseFloat(fxu.toFixed(6));
 
         // xr old
@@ -153,7 +161,7 @@ function bisectionMethod(ce, formula, xli, xui, repetitions) {
         xr = parseFloat(xr.toFixed(6));
 
         fn = ce.parse(formula);
-        fn = fn.subs({x: ce.box(xr)});
+        fn = fn.subs({ x: ce.box(xr) });
         fxr = fn.N().machineValue;
         fxr = parseFloat(fxr.toFixed(6));
 
