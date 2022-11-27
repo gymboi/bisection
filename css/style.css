@@ -64,6 +64,48 @@ header button:hover {
   display: flex;
 }
 
+#flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.flex-box {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 300px;
+  height: 500px;
+  margin: 5px;
+  text-align: center;
+  position: relative;
+  top: 50px;
+  display: inline-block;
+}
+
+.img {
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: absolute;
+  top: 60px;
+  left: 45px;
+  display: inline-block;
+}
+
+.img-text {
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #32064a;
+  font-size: 20px;
+  position: absolute;
+  top: 270px;
+  width: 100%;
+}
+
 main {
   display: flex;
   flex-direction: row;
@@ -80,6 +122,7 @@ main {
 
 .row:first-child {
   width: 35vw;
+  max-height: 75vh;
 }
 
 .column {
@@ -179,6 +222,18 @@ main {
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s
+}
+
+.modal-body {
+  font-size: 1.5rem;
+}
+
+.modal-body p {
+  margin-left: 2rem;
+}
+
+.modal-body ul {
+  margin-left: 6rem;
 }
 
 @-webkit-keyframes animatetop {
@@ -282,7 +337,7 @@ input {
 .results-wrapper {
   width: 100%;
   border-radius: 2rem;
-  max-height: 80vh;
+  max-height: 75vh;
   overflow: auto;
   margin-left: 1rem;
   background-color: black;
