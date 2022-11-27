@@ -221,14 +221,16 @@ main {
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
-  animation-duration: 0.4s
+  animation-duration: 0.4s;
 }
 
 .modal-body {
   font-size: 1.5rem;
+  width: 100%;
 }
 
 .modal-body p {
+  text-align: left;
   margin-left: 2rem;
 }
 
@@ -238,19 +240,23 @@ main {
 
 @-webkit-keyframes animatetop {
   from {
-    top:-300px; opacity:0
+    top: -300px;
+    opacity: 0;
   }
   to {
-    top:0; opacity:1
+    top: 0;
+    opacity: 1;
   }
 }
 
 @keyframes animatetop {
   from {
-    top:-300px; opacity:0
+    top: -300px;
+    opacity: 0;
   }
   to {
-    top:0; opacity:1
+    top: 0;
+    opacity: 1;
   }
 }
 

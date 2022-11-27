@@ -28,158 +28,216 @@
             srcset=""
           />
         </button>
-        <!--Discussion Modal-->
-        <div id="modal-wrapper1" class="modal">
-          <div class="modal-content">
-            <div class="modal-header">
-              <span class="close">&times;</span>
-              Discussion of Theory
-            </div>
-            <br /><br />
-            <!--Enter Discussion content here-->
-            <div class="modal-body">
-              <h3>Background Information</h3>
-              <p>
-                The bisection method is a root-finding method in mathematics
-                that is commonly used in a continuous function where a positive
-                and a negative value are known. To find the root, this method
-                will repeatedly bisect the intervals defined by the values with
-                opposite signs and then select the subinterval in which the
-                function changes sign. It is a straightforward yet slow method,
-                thus, commonly used to obtain rough approximations of a solution
-                which is then used as a starting point for more rapidly
-                converging methods. Others call this method the interval
-                halving, binary search, or dichotomy methods.
-              </p>
-              <br />
-              <h3>Algorithm</h3>
-              <p>Step 1: Choose initial x<sub>l</sub> (lower bound) and x<sub>u</sub> (upper bound) guesses, such that x<sub>l</sub> < x<sub>u</sub> and f(x<sub>l</sub>) * f(x<sub>u</sub>) < 0.</p>
-              <p>Step 2: Determine the estimate of the root using the formula: x<sub>r</sub> = (x<sub>l</sub> + x<sub>u</sub>) / 2</p>
-              <p>Step 3:</p>
-              <ul>
-                <li>If f(x<sub>l</sub>) * f(x<sub>r</sub>) < 0, the root lies in the lower subinterval. Therefore, x<sub>u</sub> = x<sub>r</sub>, and return to step 2.</li>
-                <li>If f(x<sub>l</sub>) * f(x<sub>r</sub>) > 0, the root lies in the upper subinterval. Therefore, x<sub>l</sub> = x<sub>r</sub>, and return to step 2.</li>
-                <li>If f(x<sub>l</sub>) * f(x<sub>r</sub>) = 0, the root is x<sub>r</sub>. Terminate the computation.</li>
-              </ul>
-              <br />
-              <h3>Limitations</h3>
-              <p>Limitations of the method:</p>
-              <ul>
-                <li>It does not apply to systems of more than one equation</li>
-                <li>It requires the knowledge of a bracketing interval</li>
-                <li>It requires a continuous function</li>
-                <li>Its speed of convergence is slow (linear)</li>
-              </ul>
-              <p>Limitations of the application:</p>
-              <ul>
-                <li>Response time for showing the table will take longer, and the application can crash when too many repetitions are inputted.</li>
-                <li>Browser window must be maximized for best viewing experience.</li>
-              </ul>
-              <br />
-              <h3>Sample Problem</h3>
-              <p></p>
-            </div>
-          </div>
-        </div>
-<<<<<<< HEAD
-      </div>
-      <!--Example Modal Button (Triggers the Modal)-->
-      <button id="example" class="modal-button">
-        <img src="images/help-outline.svg" class="white" alt="" srcset="" />
-      </button>
-      <!--Example Modal-->
-      <div id="modal-wrapper2" class="modal">
-        <div class="modal-content">
-          <div class="modal-header"><span class="close">&times;</span>
-            Example
-          </div>
-          <!--Enter Example content here-->
-        <p><strong>Problem:</strong> Using the bisection method solve the equation <strong>x<sup>2</sup> + 2x - 8.</strong> 
-          and start with the interval <strong>[1, 4]</strong>.</p>
-
-        <p><h3><strong>Step 1</strong></h3> Enter the problem <strong>x<sup>2</sup> + 2x - 8.</strong> in the f(x) bar. 
-          Note that to input raised values, you must use "^" </p>
-          <img src="images/step01.png" alt="step1">
-
-        <p><h3><strong>Step 2</strong></h3> Enter the lower bound (1) to x<sub>l</sub> and the upper bound (4) to x<sub>u</sub></p>
-          <img src="images/step2.png" alt="step2">
-
-        <p><h3><strong>Step 3</strong></h3> Enter the desired repetition that will be shown in the table</p>
-          <img src="images/step3.png" alt="step3">
-
-        <p><h3><strong>Step 4</strong></h3> Press the <strong>Calculate</strong> button to generate the results.</p>
-          <img src="images/step4.png" alt="step4">
-
-        <p><h3><strong>Results</strong></h3></p>
-          <img src="images/results.png" alt="results">
-
-        <div class="modal-body">
-=======
         <!--Example Modal Button (Triggers the Modal)-->
         <button title="Help" id="example" class="modal-button">
           <img src="images/help-outline.svg" class="white" alt="" srcset="" />
         </button>
-        <!--Example Modal-->
-        <div id="modal-wrapper2" class="modal">
-          <div class="modal-content">
-            <div class="modal-header">
-              <span class="close">&times;</span>
-              Example
-            </div>
-            <!--Enter Example content here-->
-            <div class="modal-body">Enter content header</div>
->>>>>>> a72e44fe3cd403918a5bc314464f802bb3e6a7af
-          </div>
-        </div>
-      </div>
-      <!--About Modal Button-->
-      <button id="about" class="modal-button">
-        <img src="images/at-circle-outline.svg" class="white" alt="" srcset="" />
-      </button>
-      <!--About Modal-->
-      <div id="modal-wrapper3" class="modal">
-        <div class="modal-content">
-          <div class="modal-header"><span class="close">&times;</span>
-            <h1 style="text-align:center; padding-bottom: 10px;">Our Team</h1>
-            <p style="text-align: center; font-size: 11pt; font-weight: normal"> 
-              We are a group of Computer science students assigned to make a bisection method calculator. 
-              We program our project with HTML, CSS, and Javascript. We learned so much from this project, 
-              which helped us grow our programming skills and relationship with each other. We are not doing 
-              this project just for compliance's sake; we hope it will benefit others. </p>
-          </div>
-          <!--Enter About content here-->
-          <div class="modal-body">
-            <div id="flex-container">
-              <div class="flex-box">
-                <img class="img" src="images/kipp.jpg">
-                <h2 class="img-text"> Kiefer John Sanchez</h2>
-                <h3 class="img-text" style="top: 295px;color: black;font-size: 14pt"> Developer </h3>
-              </div>
-              <div class="flex-box">
-                <img class="img" src="images/jethro.jpg">
-                <h2 class="img-text"> Jethro Estangki</h2>
-                <h3 class="img-text" style="top: 295px;color: black;font-size: 14pt"> Developer </h3>
-              </div>
-              <div class="flex-box">
-                <img class="img" src="images/louie.jpg">
-                <h2 class="img-text"> Louie Mejia</h2>
-                <h3 class="img-text" style="top: 295px;color: black;font-size: 14pt"> Developer </h3>
-              </div>
-              <div class="flex-box">
-                <img class="img" src="images/matthew.jpg">
-                <h2 class="img-text"> Matthew Ventigan</h2>
-                <h3 class="img-text" style="top: 295px;color: black;font-size: 14pt"> Developer </h3>
-              </div>
-              <div class="flex-box">
-                <img class="img" src="images/raph.jpg">
-                <h2 class="img-text"> Raphael Jadon</h2>
-                <h3 class="img-text" style="top: 295px;color: black;font-size: 14pt"> Developer </h3>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!--About Modal Button-->
+        <button title="About" id="about" class="modal-button">
+          <img
+            src="images/at-circle-outline.svg"
+            class="white"
+            alt=""
+            srcset=""
+          />
+        </button>
       </div>
     </header>
+    <!--Discussion Modal-->
+    <div id="modal-wrapper1" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          Discussion of Theory
+        </div>
+        <br /><br />
+        <!--Enter Discussion content here-->
+        <div class="modal-body">
+          <h3>Background Information</h3>
+          <p>
+            The bisection method is a root-finding method in mathematics that is
+            commonly used in a continuous function where a positive and a
+            negative value are known. To find the root, this method will
+            repeatedly bisect the intervals defined by the values with opposite
+            signs and then select the subinterval in which the function changes
+            sign. It is a straightforward yet slow method, thus, commonly used
+            to obtain rough approximations of a solution which is then used as a
+            starting point for more rapidly converging methods. Others call this
+            method the interval halving, binary search, or dichotomy methods.
+          </p>
+          <br />
+          <h3>Algorithm</h3>
+          <p>
+            Step 1: Choose initial x<sub>l</sub> (lower bound) and x<sub>u</sub>
+            (upper bound) guesses, such that x<sub>l</sub> < x<sub>u</sub> and
+            f(x<sub>l</sub>) * f(x<sub>u</sub>) < 0.
+          </p>
+          <p>
+            Step 2: Determine the estimate of the root using the formula: x<sub
+              >r</sub
+            >
+            = (x<sub>l</sub> + x<sub>u</sub>) / 2
+          </p>
+          <p>Step 3:</p>
+          <ul>
+            <li>
+              If f(x<sub>l</sub>) * f(x<sub>r</sub>) < 0, the root lies in the
+              lower subinterval. Therefore, x<sub>u</sub> = x<sub>r</sub>, and
+              return to step 2.
+            </li>
+            <li>
+              If f(x<sub>l</sub>) * f(x<sub>r</sub>) > 0, the root lies in the
+              upper subinterval. Therefore, x<sub>l</sub> = x<sub>r</sub>, and
+              return to step 2.
+            </li>
+            <li>
+              If f(x<sub>l</sub>) * f(x<sub>r</sub>) = 0, the root is
+              x<sub>r</sub>. Terminate the computation.
+            </li>
+          </ul>
+          <br />
+          <h3>Limitations</h3>
+          <p>Limitations of the method:</p>
+          <ul>
+            <li>It does not apply to systems of more than one equation</li>
+            <li>It requires the knowledge of a bracketing interval</li>
+            <li>It requires a continuous function</li>
+            <li>Its speed of convergence is slow (linear)</li>
+          </ul>
+          <p>Limitations of the application:</p>
+          <ul>
+            <li>
+              Response time for showing the table will take longer, and the
+              application can crash when too many repetitions are inputted.
+            </li>
+            <li>
+              Browser window must be maximized for best viewing experience.
+            </li>
+          </ul>
+          <br />
+          <h3>Sample Problem</h3>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <!--Example Modal-->
+    <div id="modal-wrapper2" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          Example
+        </div>
+
+        <div class="modal-body">
+          <!--Enter Example content here-->
+          <h3>Problem</h3>
+          <p>
+            Using the bisection method solve the equation
+            <strong>x<sup>2</sup> + 2x - 8.</strong> and start with the interval
+            <strong>[1, 4]</strong>.
+          </p>
+          <h3>Step 1</h3>
+          <p>
+            Enter the problem <strong>x<sup>2</sup> + 2x - 8.</strong> in the
+            f(x) bar. Note that to input raised values, you must use "^"
+          </p>
+          <img src="images/step01.png" alt="step1" />
+
+          <h3>Step 2</h3>
+          <p>
+            Enter the lower bound (1) to x<sub>l</sub> and the upper bound (4)
+            to x<sub>u</sub>
+          </p>
+          <img src="images/step2.png" alt="step2" />
+
+          <h3>Step 3</h3>
+          <p>Enter the desired repetition that will be shown in the table</p>
+          <img src="images/step3.png" alt="step3" />
+
+          <h3>Step 4</h3>
+          <p>
+            Press the <strong>Calculate</strong> button to generate the results.
+          </p>
+          <img src="images/step4.png" alt="step4" />
+
+          <h3>Results</h3>
+          <img src="images/results.png" alt="results" />
+          <img src="images/results2.png" alt="results">
+        </div>
+      </div>
+    </div>
+    <!--About Modal-->
+    <div id="modal-wrapper3" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h1 style="text-align: center; padding-bottom: 10px">Our Team</h1>
+          <p style="text-align: center; font-size: 11pt; font-weight: normal">
+            We are a group of Computer science students assigned to make a
+            bisection method calculator. We program our project with HTML, CSS,
+            and Javascript. We learned so much from this project, which helped
+            us grow our programming skills and relationship with each other. We
+            are not doing this project just for compliance's sake; we hope it
+            will benefit others.
+          </p>
+        </div>
+        <!--Enter About content here-->
+        <div class="modal-body">
+          <div id="flex-container">
+            <div class="flex-box">
+              <img class="img" src="images/kipp.jpg" />
+              <h2 class="img-text">Kiefer John Sanchez</h2>
+              <h3
+                class="img-text"
+                style="top: 295px; color: black; font-size: 14pt"
+              >
+                Developer
+              </h3>
+            </div>
+            <div class="flex-box">
+              <img class="img" src="images/jethro.jpg" />
+              <h2 class="img-text">Jethro Estangki</h2>
+              <h3
+                class="img-text"
+                style="top: 295px; color: black; font-size: 14pt"
+              >
+                Developer
+              </h3>
+            </div>
+            <div class="flex-box">
+              <img class="img" src="images/louie.jpg" />
+              <h2 class="img-text">Louie Mejia</h2>
+              <h3
+                class="img-text"
+                style="top: 295px; color: black; font-size: 14pt"
+              >
+                Developer
+              </h3>
+            </div>
+            <div class="flex-box">
+              <img class="img" src="images/matthew.jpg" />
+              <h2 class="img-text">Matthew Ventigan</h2>
+              <h3
+                class="img-text"
+                style="top: 295px; color: black; font-size: 14pt"
+              >
+                Developer
+              </h3>
+            </div>
+            <div class="flex-box">
+              <img class="img" src="images/raph.jpg" />
+              <h2 class="img-text">Raphael Jadon</h2>
+              <h3
+                class="img-text"
+                style="top: 295px; color: black; font-size: 14pt"
+              >
+                Developer
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="method-name">
       <span>Bisection</span>
       Method Calculator
