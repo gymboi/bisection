@@ -80,6 +80,7 @@ main {
 
 .row:first-child {
   width: 35vw;
+  max-height: 75vh;
 }
 
 .column {
@@ -179,6 +180,18 @@ main {
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s
+}
+
+.modal-body {
+  font-size: 1.5rem;
+}
+
+.modal-body p {
+  margin-left: 2rem;
+}
+
+.modal-body ul {
+  margin-left: 6rem;
 }
 
 @-webkit-keyframes animatetop {
@@ -282,7 +295,7 @@ input {
 .results-wrapper {
   width: 100%;
   border-radius: 2rem;
-  max-height: 80vh;
+  max-height: 75vh;
   overflow: auto;
   margin-left: 1rem;
   background-color: black;

@@ -1,130 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/icon/icon.jpg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Numerical Methods</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="images/icon/icon.jpg" />
-  <link rel="stylesheet" href="css/style.css" />
-  <title>Numerical Methods</title>
-</head>
-
-<body>
-  <header id="header" class="open">
-    <button id="hamburger">
-      <img src="images/menu-outline.svg" class="white" alt="" srcset="" />
-    </button>
-    <!--Discussion Modal Button (Triggers the Modal)-->
-    <div id="button-wrapper" class="open">
-      <button id="discussion" class="modal-button">
-        <img src="images/newspaper-outline.svg" class="white" alt="" srcset="" />
+  <body>
+    <header id="header" class="open">
+      <button id="hamburger">
+        <img src="images/menu-outline.svg" class="white" alt="" srcset="" />
       </button>
-      <!--Discussion Modal-->
-      <div id="modal-wrapper1" class="modal">
-        <div class="modal-content">
-          <div class="modal-header"><span class="close">&times;</span>
-            Discussion of theory
-          </div>
-          <!--Enter Discussion content here-->
-          <div class="modal-body">
-            Enter content here
-          </div>
-        </div>
-      </div>
-      <!--Example Modal Button (Triggers the Modal)-->
-      <button id="example" class="modal-button">
-        <img src="images/help-outline.svg" class="white" alt="" srcset="" />
-      </button>
-      <!--Example Modal-->
-      <div id="modal-wrapper2" class="modal">
-        <div class="modal-content">
-          <div class="modal-header"><span class="close">&times;</span>
-            Example
-          </div>
-          <!--Enter Example content here-->
-          <div class="modal-body">
-            Enter content header
-          </div>
-        </div>
-      </div>
-      <!--About Modal Button-->
-      <button id="about" class="modal-button">
-        <img src="images/at-circle-outline.svg" class="white" alt="" srcset="" />
-      </button>
-      <!--About Modal-->
-      <div id="modal-wrapper3" class="modal">
-        <div class="modal-content">
-          <div class="modal-header"><span class="close">&times;</span>
-            About us
-          </div>
-          <!--Enter About content here-->
-          <div class="modal-body">
-            Enter content here
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <div class="method-name">
-    <span>Bisection</span>
-    Method Calculator
-  </div>
-  <main>
-    <div class="row">
-      <div class="column">
-        <!--Left Div Box-->
-        <div class="input-wrapper">
-          <div class="input">
-            <div class="function-wrapper">
-              <div class="function">
-                <label for="function">f(x): </label>
-                <math-field id="function"></math-field>
-              </div>
+      <!--Discussion Modal Button (Triggers the Modal)-->
+      <div id="button-wrapper" class="open">
+        <button
+          title="Discussion of Theory"
+          id="discussion"
+          class="modal-button"
+        >
+          <img
+            src="images/newspaper-outline.svg"
+            class="white"
+            alt=""
+            srcset=""
+          />
+        </button>
+        <!--Discussion Modal-->
+        <div id="modal-wrapper1" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">&times;</span>
+              Discussion of Theory
+            </div>
+            <br /><br />
+            <!--Enter Discussion content here-->
+            <div class="modal-body">
+              <h3>Background Information</h3>
+              <p>
+                The bisection method is a root-finding method in mathematics
+                that is commonly used in a continuous function where a positive
+                and a negative value are known. To find the root, this method
+                will repeatedly bisect the intervals defined by the values with
+                opposite signs and then select the subinterval in which the
+                function changes sign. It is a straightforward yet slow method,
+                thus, commonly used to obtain rough approximations of a solution
+                which is then used as a starting point for more rapidly
+                converging methods. Others call this method the interval
+                halving, binary search, or dichotomy methods.
+              </p>
+              <br />
+              <h3>Algorithm</h3>
+              <p>Step 1: Choose initial x<sub>l</sub> (lower bound) and x<sub>u</sub> (upper bound) guesses, such that x<sub>l</sub> < x<sub>u</sub> and f(x<sub>l</sub>) * f(x<sub>u</sub>) < 0.</p>
+              <p>Step 2: Determine the estimate of the root using the formula: x<sub>r</sub> = (x<sub>l</sub> + x<sub>u</sub>) / 2</p>
+              <p>Step 3:</p>
+              <ul>
+                <li>If f(x<sub>l</sub>) * f(x<sub>r</sub>) < 0, the root lies in the lower subinterval. Therefore, x<sub>u</sub> = x<sub>r</sub>, and return to step 2.</li>
+                <li>If f(x<sub>l</sub>) * f(x<sub>r</sub>) > 0, the root lies in the upper subinterval. Therefore, x<sub>l</sub> = x<sub>r</sub>, and return to step 2.</li>
+                <li>If f(x<sub>l</sub>) * f(x<sub>r</sub>) = 0, the root is x<sub>r</sub>. Terminate the computation.</li>
+              </ul>
+              <br />
+              <h3>Limitations</h3>
+              <p>Limitations of the method:</p>
+              <ul>
+                <li>It does not apply to systems of more than one equation</li>
+                <li>It requires the knowledge of a bracketing interval</li>
+                <li>It requires a continuous function</li>
+                <li>Its speed of convergence is slow (linear)</li>
+              </ul>
+              <p>Limitations of the application:</p>
+              <ul>
+                <li>Response time for showing the table will take longer, and the application can crash when too many repetitions are inputted.</li>
+                <li>Browser window must be maximized for best viewing experience.</li>
+              </ul>
+              <br />
+              <h3>Sample Problem</h3>
+              <p></p>
             </div>
           </div>
-          <div class="input">
-            <div class="interval-wrapper">
-              <div class="interval">
-                <label for="xl">x<sub>l</sub>: </label>
-                <input id="xl" type="text" />
-              </div>
-              <div class="interval">
-                <label for="xu">x<sub>u</sub>: </label>
-                <input id="xu" type="text" />
+        </div>
+        <!--Example Modal Button (Triggers the Modal)-->
+        <button title="Help" id="example" class="modal-button">
+          <img src="images/help-outline.svg" class="white" alt="" srcset="" />
+        </button>
+        <!--Example Modal-->
+        <div id="modal-wrapper2" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">&times;</span>
+              Example
+            </div>
+            <!--Enter Example content here-->
+            <div class="modal-body">Enter content header</div>
+          </div>
+        </div>
+        <!--About Modal Button-->
+        <button title="About Us" id="about" class="modal-button">
+          <img
+            src="images/at-circle-outline.svg"
+            class="white"
+            alt=""
+            srcset=""
+          />
+        </button>
+        <!--About Modal-->
+        <div id="modal-wrapper3" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">&times;</span>
+              About us
+            </div>
+            <!--Enter About content here-->
+            <div class="modal-body">Enter content here</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="method-name">
+      <span>Bisection</span>
+      Method Calculator
+    </div>
+    <main>
+      <div class="row">
+        <div class="column">
+          <!--Left Div Box-->
+          <div class="input-wrapper">
+            <div class="input">
+              <div class="function-wrapper">
+                <div class="function">
+                  <label for="function">f(x): </label>
+                  <math-field id="function"></math-field>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="input">
-            <div class="repetitions-wrapper">
-              <label for="repetitions">Repetitions: </label>
-              <input id="repetitions" type="number" />
+            <div class="input">
+              <div class="interval-wrapper">
+                <div class="interval">
+                  <label for="xl">x<sub>l</sub>: </label>
+                  <input id="xl" type="text" />
+                </div>
+                <div class="interval">
+                  <label for="xu">x<sub>u</sub>: </label>
+                  <input id="xu" type="text" />
+                </div>
+              </div>
             </div>
+            <div class="input">
+              <div class="repetitions-wrapper">
+                <label for="repetitions">Repetitions: </label>
+                <input id="repetitions" type="number" />
+              </div>
+            </div>
+            <button id="calculate">Calculate</button>
           </div>
-          <button id="calculate">Calculate</button>
+        </div>
+        <div class="column">
+          <!--Bottom Left Div Box-->
+          <div class="iterations-wrapper">
+            <div class="solution-title">Solution</div>
+          </div>
         </div>
       </div>
-      <div class="column">
-        <!--Bottom Left Div Box-->
-        <div class="iterations-wrapper">
-          <div class="solution-title">Solution</div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column">
-        <!--Right Div Box-->
+      <div class="row">
+        <div class="column">
+          <!--Right Div Box-->
 
-        <div class="results-wrapper">
-          <table id="results"></table>
+          <div class="results-wrapper">
+            <table id="results"></table>
+          </div>
         </div>
       </div>
-    </div>
-  </main>
-  <script src="js/jquery/jquery.min.js"></script>
-  <script src="js/compute-engine.js"></script>
-  <script src="js/mathlive/mathlive.js"></script>
-  <script src="js/main.js"></script>
-</body>
-
+    </main>
+    <script src="js/jquery/jquery.min.js"></script>
+    <script src="js/compute-engine.js"></script>
+    <script src="js/mathlive/mathlive.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
