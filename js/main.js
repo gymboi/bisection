@@ -104,28 +104,33 @@ $(document).ready(function () {
         console.log(iterations);
     });
 
-    var modal = document.getElementById("modal-wrapper");
-    var discussionBtn = document.getElementById("discussion");
-    var closeBtn = document.getElementsByClassName("close")[0];
 
+    var modal = document.getElementsByClassName('modal');
+    var modalBtn = document.getElementsByClassName("modal-button");
+    var closeBtn = document.getElementsByClassName("close");
 
-    discussionBtn.onclick = function () {
-        modal.style.display = "block";
+    modalBtn[0].onclick = function () {
+        modal[0].style.display = "block";
     }
 
-    closeBtn.onclick = function () {
-        modal.style.display = "none";
+    modalBtn[1].onclick = function () {
+        modal[1].style.display = "block";
     }
-    // prevents modal bar from closing when clicking outside the div box
-    $('#modal-wrapper').modal({
-        backdrop: 'static',
-        keyboard: false
-    });
 
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
+    modalBtn[2].onclick = function(){
+        modal[2].style.display = "block";
+    }
+
+    closeBtn[0].onclick = function () {
+        modal[0].style.display = "none";
+    }
+
+    closeBtn[1].onclick = function () {
+        modal[1].style.display = "none";
+    }
+    
+    closeBtn[2].onclick = function () {
+        modal[2].style.display = "none";
     }
 });
 

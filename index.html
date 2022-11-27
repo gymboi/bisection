@@ -1,105 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="images/icon/icon.jpg" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Numerical Methods</title>
-  </head>
-  <body>
-    <header id="header" class="open">
-      <button id="hamburger">
-        <img src="images/menu-outline.svg" class="white" alt="" srcset="" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/icon/icon.jpg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Numerical Methods</title>
+</head>
+
+<body>
+  <header id="header" class="open">
+    <button id="hamburger">
+      <img src="images/menu-outline.svg" class="white" alt="" srcset="" />
+    </button>
+    <!--Modal Button-->
+    <div id="button-wrapper" class="open">
+      <button id="discussion" class="modal-button">
+        <img src="images/newspaper-outline.svg" class="white" alt="" srcset="" />
       </button>
-      <div id="button-wrapper" class="open">
-        <button id="discussion">
-          <img
-            src="images/newspaper-outline.svg"
-            class="white"
-            alt=""
-            srcset=""
-          />
-        </button>
-        <div id="modal-wrapper" class="modal">
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="modal-header">Discussion of theory</div>
+      <!--Modal-->
+      <div id="modal-wrapper1" class="modal">
+        <div class="modal-content">
+          <div class="modal-header"><span class="close">&times;</span>
+            Discussion of theory
+          </div>
+          <div class="modal-body">
             Enter content here
           </div>
         </div>
-        <button id="example">
-          <img src="images/help-outline.svg" class="white" alt="" srcset="" />
-        </button>
-        <button id="about">
-          <img
-            src="images/at-circle-outline.svg"
-            class="white"
-            alt=""
-            srcset=""
-          />
-        </button>
       </div>
-    </header>
-    <div class="method-name">
-      <span>Bisection</span>
-      Method Calculator
+      <!--Modal Button-->
+      <button id="example" class="modal-button">
+        <img src="images/help-outline.svg" class="white" alt="" srcset="" />
+      </button>
+      <!--Modal-->
+      <div id="modal-wrapper2" class="modal">
+        <div class="modal-content">
+          <div class="modal-header"><span class="close">&times;</span>
+            Example
+          </div>
+          <div class="modal-body">
+            Enter content header
+          </div>
+        </div>
+      </div>
+      <!--Modal Button-->
+      <button id="about" class="modal-button">
+        <img src="images/at-circle-outline.svg" class="white" alt="" srcset="" />
+      </button>
+      <!--Modal-->
+      <div id="modal-wrapper3" class="modal">
+        <div class="modal-content">
+          <div class="modal-header"><span class="close">&times;</span>
+            About us
+          </div>
+          <div class="modal-body">
+            Enter content here
+          </div>
+        </div>
+      </div>
     </div>
-    <main>
-      <div class="row">
-        <div class="column">
-          <!--Left Div Box-->
-          <div class="input-wrapper">
-            <div class="input">
-              <div class="function-wrapper">
-                <div class="function">
-                  <label for="function">f(x): </label>
-                  <math-field id="function"></math-field>
-                </div>
+  </header>
+  <div class="method-name">
+    <span>Bisection</span>
+    Method Calculator
+  </div>
+  <main>
+    <div class="row">
+      <div class="column">
+        <!--Left Div Box-->
+        <div class="input-wrapper">
+          <div class="input">
+            <div class="function-wrapper">
+              <div class="function">
+                <label for="function">f(x): </label>
+                <math-field id="function"></math-field>
               </div>
             </div>
-            <div class="input">
-              <div class="interval-wrapper">
-                <div class="interval">
-                  <label for="xl">x<sub>l</sub>: </label>
-                  <input id="xl" type="text" />
-                </div>
-                <div class="interval">
-                  <label for="xu">x<sub>u</sub>: </label>
-                  <input id="xu" type="text" />
-                </div>
-              </div>
-            </div>
-            <div class="input">
-              <div class="repetitions-wrapper">
-                <label for="repetitions">Repetitions: </label>
-                <input id="repetitions" type="number" />
-              </div>
-            </div>
-            <button id="calculate">Calculate</button>
           </div>
-        </div>
-        <div class="column">
-          <!--Bottom Left Div Box-->
-          <div class="iterations-wrapper">
-            <div class="solution-title">Solution</div>
+          <div class="input">
+            <div class="interval-wrapper">
+              <div class="interval">
+                <label for="xl">x<sub>l</sub>: </label>
+                <input id="xl" type="text" />
+              </div>
+              <div class="interval">
+                <label for="xu">x<sub>u</sub>: </label>
+                <input id="xu" type="text" />
+              </div>
+            </div>
           </div>
+          <div class="input">
+            <div class="repetitions-wrapper">
+              <label for="repetitions">Repetitions: </label>
+              <input id="repetitions" type="number" />
+            </div>
+          </div>
+          <button id="calculate">Calculate</button>
         </div>
       </div>
-      <div class="row">
-        <div class="column">
-          <!--Right Div Box-->
+      <div class="column">
+        <!--Bottom Left Div Box-->
+        <div class="iterations-wrapper">
+          <div class="solution-title">Solution</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <!--Right Div Box-->
 
-          <div class="results-wrapper">
-            <table id="results"></table>
-          </div>
+        <div class="results-wrapper">
+          <table id="results"></table>
         </div>
       </div>
-    </main>
-    <script src="js/jquery/jquery.min.js"></script>
-    <script src="js/compute-engine.js"></script>
-    <script src="js/mathlive/mathlive.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+    </div>
+  </main>
+  <script src="js/jquery/jquery.min.js"></script>
+  <script src="js/compute-engine.js"></script>
+  <script src="js/mathlive/mathlive.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
 </html>
