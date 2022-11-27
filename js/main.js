@@ -109,29 +109,13 @@ $(document).ready(function () {
     var modalBtn = document.getElementsByClassName("modal-button");
     var closeBtn = document.getElementsByClassName("close");
 
-    modalBtn[0].onclick = function () {
-        modal[0].style.display = "block";
-    }
-
-    modalBtn[1].onclick = function () {
-        modal[1].style.display = "block";
-    }
-
-    modalBtn[2].onclick = function(){
-        modal[2].style.display = "block";
-    }
-
-    closeBtn[0].onclick = function () {
-        modal[0].style.display = "none";
-    }
-
-    closeBtn[1].onclick = function () {
-        modal[1].style.display = "none";
-    }
-    
-    closeBtn[2].onclick = function () {
-        modal[2].style.display = "none";
-    }
+    [...modalBtn].forEach((modalB, index) => {
+        modalB.onclick = () => (modal[index].style.display = 'block');
+      });
+      
+    [...closeBtn].forEach((close, index) => {
+        close.onclick = () => (modal[index].style.display = 'none');
+      });
 });
 
 // xli = initial lower bound, xui = initial upper bound
