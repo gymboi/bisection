@@ -64,6 +64,48 @@ header button:hover {
   display: flex;
 }
 
+#flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.flex-box {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 300px;
+  height: 500px;
+  margin: 5px;
+  text-align: center;
+  position: relative;
+  top: 50px;
+  display: inline-block;
+}
+
+.img {
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: absolute;
+  top: 60px;
+  left: 45px;
+  display: inline-block;
+}
+
+.img-text {
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #32064a;
+  font-size: 20px;
+  position: absolute;
+  top: 270px;
+  width: 100%;
+}
+
 main {
   display: flex;
   flex-direction: row;
