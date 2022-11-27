@@ -239,6 +239,12 @@ main {
   margin-left: 6rem;
 }
 
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 @-webkit-keyframes animatetop {
   from {
     top: -300px;

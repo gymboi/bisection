@@ -66,6 +66,7 @@ $(document).ready(function () {
             let xr = iterations[i][5];
             let fxr = iterations[i][6];
             let ea = iterations[i][7];
+            let xro = iterations[i][8];
 
             iterationDiv.append($(`<h3 class="iteration-header">Iteration ${i + 1}:</h3>`));
             let iterationContent = $('<p class="iteration-content"></p>');
@@ -87,13 +88,19 @@ $(document).ready(function () {
                 iterationContent.append($(`<br><span><strong>Step 3:</strong> The root is ${xr} because f(x<sub>l</sub>) * f(x<sub>r</sub>) = 0.</span>`));
             }
 
-            let tr = $('<tr class="table-data"></tr>');
-            iterations[i].forEach(e => {
-                // Table
-                let th = $(`<td>${e}</td>`);
-                tr.append(th);
+            iterationContent.append($(`<br><span><strong>Step 4:</strong> Determine the approximate error using the formula: ε<sub>a</sub> = |(x<sub>r</sub><sup>new</sup> - x<sub>r</sub><sup>old</sup>) / x<sub>r</sub><sup>new</sup>| * 100%
+            <br><strong>ε<sub>a</sub></strong> = | (${xr} - ${xro}) / ${xr} | * 100%
+            <br><strong>ε<sub>a</sub></strong> = ${ea}</span>`));
 
-                // Steps
+            let tr = $('<tr class="table-data"></tr>');
+            let counter = 0;
+            iterations[i].forEach(e => {
+                console.log(`i = ${counter}, e=${e}`);
+                if (counter != 8) {
+                    let th = $(`<td>${e}</td>`);
+                    tr.append(th);
+                }
+                counter++;
 
             });
             iterationContent.append(`<br><br>`);
@@ -111,11 +118,11 @@ $(document).ready(function () {
 
     [...modalBtn].forEach((modalB, index) => {
         modalB.onclick = () => (modal[index].style.display = 'block');
-      });
-      
+    });
+
     [...closeBtn].forEach((close, index) => {
         close.onclick = () => (modal[index].style.display = 'none');
-      });
+    });
 });
 
 // xli = initial lower bound, xui = initial upper bound
@@ -149,7 +156,7 @@ function bisectionMethod(ce, formula, xli, xui, repetitions) {
 
     let ea = "100%";
 
-    iterations = [[1, xl, xu, fxl, fxu, xr, fxr, ea]];
+    iterations = [[1, xl, xu, fxl, fxu, xr, fxr, ea, 0]];
     for (let i = 0; i < repetitions; i++) {
         if (fxl * fxr < 0) xu = xr;
         else if (fxl * fxr > 0) xl = xr;
@@ -180,7 +187,7 @@ function bisectionMethod(ce, formula, xli, xui, repetitions) {
 
         ea = calculateApproximateError(xr, xro);
 
-        iterations.push([i + 2, xl, xu, fxl, fxu, xr, fxr, ea]);
+        iterations.push([i + 2, xl, xu, fxl, fxu, xr, fxr, ea, xro]);
     }
 
     return iterations;
