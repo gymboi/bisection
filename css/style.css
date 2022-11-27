@@ -69,17 +69,15 @@ header button:hover {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  margin-top: 5rem;
 }
 
 .flex-box {
   margin-top: auto;
   margin-bottom: auto;
   width: 300px;
-  height: 500px;
   margin: 5px;
   text-align: center;
-  position: relative;
   top: 50px;
   display: inline-block;
 }
@@ -87,10 +85,10 @@ header button:hover {
 .img {
   margin-top: auto;
   margin-bottom: auto;
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
   border-radius: 50%;
-  position: absolute;
   top: 60px;
   left: 45px;
   display: inline-block;
@@ -101,9 +99,12 @@ header button:hover {
   margin-bottom: auto;
   color: #32064a;
   font-size: 20px;
-  position: absolute;
-  top: 270px;
   width: 100%;
+}
+
+.role-text {
+  color: black;
+  font-size: 12pt;
 }
 
 main {
@@ -453,9 +454,6 @@ tr:first-child {
   background: #32064a;
 }
 
-@media (max-width: 768px) {
-}
-
 @media (max-width: 1200px) {
   main {
     flex-direction: column;
@@ -474,5 +472,13 @@ tr:first-child {
 
   .results-wrapper {
     margin-left: unset;
+  }
+
+  #modal-wrapper2 img {
+    width: 600px;
+  }
+
+  #flex-container {
+    flex-direction: column;
   }
 }
